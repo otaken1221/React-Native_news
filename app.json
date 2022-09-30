@@ -30,7 +30,8 @@
       "favicon": "./assets/favicon.png"
     },
     "extra": {
-      "newsApiKey": "b03cb445f4c14504a60923a2d6743dd9"
+      "newsApiKey": "b03cb445f4c14504a60923a2d6743dd9",
+      "weatherApiKey": "c6ee4e8bd456d485587aa19636f211ed"
     }
   }
 }

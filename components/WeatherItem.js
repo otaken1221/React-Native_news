@@ -1,37 +1,26 @@
 import React from "react";
-import { StyleSheet, View, Text, Image  } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 
-const WeatherItem = () => {
-
+const WeatherItem = ({ description, icon, name }) => {
   return (
-    <View style={styles.container}>
     <View style={styles.box}>
       <View style={styles.moziBox}>
-        <Text style={styles.text}>
-          大阪
-        </Text>
-        <Text style={styles.subText}>{koukaihiduke}</Text>
+        <Text style={styles.text}>{name}</Text>
       </View>
 
       <View style={styles.gazoBox}>
-        <Image style={{ width: 70, height: 70 }} source={{ url: "https://picsum.photos/id/599/200/300" }} />
-        <Text style={styles.subText}>くもり</Text>
+        <Image
+          style={{ width: 95, height: 95 }}
+          source={{ url: `http://openweathermap.org/img/wn/${icon}@2x.png` }}
+        />
+        <Text style={styles.subText}>{description}</Text>
       </View>
     </View>
-    </View>
   );
-}
-
+};
 export default WeatherItem;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
   box: {
     height: 100,
     width: "100%",
@@ -40,19 +29,19 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
 
-  moziBox: {
-    width: 250,
+  gazoBox: {
+    width: 200,
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
   },
 
-  gazoBox: {
+  moziBox: {
     flex: 1,
-    padding: 15,
+    padding: 35,
     justifyContent: "center",
   },
-  
+
   text: {
     fontSize: 17,
   },
@@ -60,6 +49,5 @@ const styles = StyleSheet.create({
   subText: {
     fontSize: 14,
     color: "darkblue",
-    paddingLeft: 15,
   },
 });
